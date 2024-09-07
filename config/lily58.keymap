@@ -9,15 +9,6 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
-    combos {
-        compatible = "zmk,combos";
-
-        switch_win_mode {
-            bindings = <&tog 1>;
-            key-positions = <52 55>;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
