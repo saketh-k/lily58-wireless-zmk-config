@@ -13,7 +13,7 @@
         compatible = "zmk,combos";
 
         switch_win_mode {
-            bindings = <&tog 3>;
+            bindings = <&tog 1>;
             key-positions = <52 55>;
         };
     };
@@ -31,14 +31,24 @@
 
             display-name = "Base";
             bindings = <
-&kp ESC    &kp N1  &kp N2  &kp N3    &kp N4    &kp N5                         &kp N6  &kp N7    &kp N8             &kp N9   &kp N0    &kp EQUAL
-&kp TAB    &kp Q   &kp W   &kp E     &kp R     &kp T                          &kp Y   &kp U     &kp I              &kp O    &kp P     &kp MINUS
-&kp LCTRL  &kp A   &kp S   &kp D     &kp F     &kp G                          &kp H   &kp J     &kp K              &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z   &kp X   &kp C     &kp V     &kp B   &kp LBKT     &kp RBKT  &kp N   &kp M     &kp COMMA          &kp DOT  &kp FSLH  &kp RSHFT
-                           &kp LALT  &kp LGUI  &mo 1   &kp SPACE    &kp RET   &mo 2   &kp BSPC  &kp RIGHT_CONTROL
+&kp TAB     &kp N1  &kp N2  &kp N3    &kp N4    &kp N5                         &kp N6  &kp N7    &kp N8             &kp N9   &kp N0    &kp EQUAL
+&kp ESCAPE  &kp Q   &kp W   &kp E     &kp R     &kp T                          &kp Y   &kp U     &kp I              &kp O    &kp P     &kp MINUS
+&kp LCTRL   &kp A   &kp S   &kp D     &kp F     &kp G                          &kp H   &kp J     &kp K              &kp L    &kp SEMI  &kp SQT
+&kp LSHFT   &kp Z   &kp X   &kp C     &kp V     &kp B   &kp LBKT     &kp RBKT  &kp N   &kp M     &kp COMMA          &kp DOT  &kp FSLH  &kp RSHFT
+                            &kp LALT  &kp LGUI  &mo 2   &kp SPACE    &kp RET   &mo 3   &kp BSPC  &kp RIGHT_CONTROL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+
+        layer_3 {
+            bindings = <
+&trans  &trans          &trans            &trans          &trans              &trans                    &trans  &trans       &trans           &trans             &trans                   &trans
+&trans  &trans          &trans            &trans          &trans              &trans                    &trans  &trans       &trans           &trans             &trans                   &trans
+&trans  &mt LEFT_ALT A  &mt LEFT_SHIFT S  &mt LEFT_GUI D  &mt LEFT_CONTROL F  &trans                    &trans  &mt RCTRL J  &mt RIGHT_GUI K  &mt RIGHT_SHIFT L  &mt RIGHT_ALT SEMICOLON  &trans
+&trans  &trans          &trans            &trans          &trans              &trans  &trans    &trans  &trans  &trans       &trans           &trans             &trans                   &trans
+                                          &kp LEFT_WIN    &kp LEFT_ALT        &trans  &trans    &trans  &trans  &trans       &trans
+            >;
         };
 
         lower_layer {
@@ -52,7 +62,7 @@
             display-name = "Lower";
             bindings = <
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                                 &trans        &trans        &trans        &trans        &trans     &trans
-&trans      &kp F1        &kp F2        &kp F3        &kp F4        &kp F5                                                       &kp ASTERISK  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp MINUS  &kp BACKSLASH
+&kp ESCAPE  &kp F1        &kp F2        &kp F3        &kp F4        &kp F5                                                       &kp ASTERISK  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp MINUS  &kp BACKSLASH
 &trans      &kp F6        &kp F7        &kp F8        &kp F9        &kp F10                                                      &kp CARET     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp GRAVE  &kp TILDE
 &trans      &kp F11       &kp F12       &kp F13       &kp F14       &kp F15       &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &trans        &kp NUMBER_0  &kp KP_PLUS   &kp LBRC      &kp RBRC   &kp PIPE
                                         &trans        &trans        &trans        &trans                  &trans                 &trans        &trans        &trans
@@ -71,24 +81,14 @@
 
             display-name = "Raise";
             bindings = <
-&trans  &trans        &trans        &trans        &soft_off     &trans                             &trans        &soft_off     &trans        &trans        &trans        &trans
-&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5                             &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp BACKSLASH
-&trans  &trans        &trans        &trans        &trans        &trans                             &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     &trans        &kp GRAVE
-&trans  &trans        &trans        &trans        &trans        &trans  &kp K_COPY    &kp K_PASTE  &kp KP_PLUS   &kp MINUS     &kp EQUAL     &kp LBKT      &kp RBKT      &kp RIGHT_SHIFT
-                                    &trans        &trans        &trans  &trans        &trans       &trans        &trans        &trans
+&trans  &trans                &trans                 &trans        &soft_off     &trans                             &trans        &soft_off     &trans        &trans        &trans        &trans
+&trans  &kp NUMBER_1          &kp NUMBER_2           &kp NUMBER_3  &kp NUMBER_4  &kp N5                             &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp BACKSLASH
+&trans  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans        &trans        &trans                             &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     &trans        &kp GRAVE
+&trans  &trans                &trans                 &trans        &trans        &trans  &kp K_COPY    &kp K_PASTE  &kp KP_PLUS   &kp MINUS     &kp EQUAL     &kp LBKT      &kp RBKT      &kp RIGHT_SHIFT
+                                                     &trans        &trans        &trans  &trans        &trans       &trans        &trans        &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-        };
-
-        layer_3 {
-            bindings = <
-&trans  &trans  &trans  &trans        &trans        &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans        &trans        &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans        &trans        &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans        &trans        &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                        &kp LEFT_WIN  &kp LEFT_ALT  &trans  &trans    &trans  &trans  &trans  &trans
-            >;
         };
     };
 };
